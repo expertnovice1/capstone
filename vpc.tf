@@ -1,6 +1,6 @@
 module "network" {
   source  = "terraform-google-modules/network/google"
-  version = "8.0.0"
+  version = "6.0.0"
   # insert the 3 required variables here
   project_id = "capstone-406620"
   network_name = "capstone-network-001"
