@@ -1,9 +1,7 @@
-module "service-accounts" {
-  source  = "terraform-google-modules/service-accounts/google"
-  version = "4.2.2"
+module "service-account" {
+  source  = "./modules/service-account/"
   project_id = "capstone-406620"
-  prefix = "sa-capstone"
-  project_roles = [
-    "capstone-406620=>roles/compute.admin",
-  ]
+  service_account_name = "sa-capstone"
+  service_account_display_name = "sa-capstone"
+  service_account_description = "service account for VMs"
 }

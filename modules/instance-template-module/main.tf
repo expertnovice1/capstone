@@ -18,6 +18,10 @@ variable "boot_disk_image" {
   description = "Source image for the boot disk"
 }
 
+variable "service_account" {
+  description = "service account for running the VM"
+}
+
 variable "source_image" {
   description = "Source image for the instance"
   default     = "projects/debian-cloud/global/images/debian-11-bullseye-v20231115"
@@ -51,6 +55,11 @@ resource "google_compute_instance_template" "example" {
   }
 
   metadata_startup_script = file(var.startup_script)
+
+  service_account {
+    email = var.service_account
+    scopes = ["cloud-platform"]
+  }
 
   network_interface {
     network = "capstone-network-001"
