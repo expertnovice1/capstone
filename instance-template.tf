@@ -5,4 +5,5 @@ module "vm_instance_template" {
   boot_disk_image        = "projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20210913"
   network_tags           = ["web", "app"]
   startup_script          = "./startup-script.sh"
+  service_account = "sa-capstone@capstone-406620.iam.gserviceaccount.com"
 }
