@@ -1,4 +1,6 @@
 
+
+
 resource "google_compute_instance_template" "example" {
   name        = var.instance_template_name
   description = "Instance Template for VM instances"
@@ -28,4 +30,8 @@ resource "google_compute_instance_template" "example" {
   }
 
   tags = var.network_tags
+}
+
+output "template_name_output" {
+  value = google_compute_instance_template.example.name
 }
