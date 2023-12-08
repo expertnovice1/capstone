@@ -1,0 +1,7 @@
+module "load_balancer" {
+  source       = "GoogleCloudPlatform/lb/google"
+  region       = "us-central1"
+  name         = "load-balancer"
+  service_port = 80
+  network      = "capstone-network-001"
+}
